@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 12:19:50 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/05/30 17:32:18 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/01 16:03:41 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	rr(t_all *meta)
 {
-	ra(meta);
-	rb(meta);
+	ra(meta, 0);
+	rb(meta, 0);
 }
 
-void	ra(t_all *meta)
+void	ra(t_all *meta, int x)
 {
 	t_stack	*one;
 	t_stack	*last;
@@ -39,8 +39,10 @@ void	ra(t_all *meta)
 	last->next = one;
 	one->prev = last;
 	reindex_a(meta);
+	if (x)
+		ft_putstr("ra\n");
 }
-void	rb(t_all *meta)
+void	rb(t_all *meta, int x)
 {
 	t_stack	*one;
 	t_stack	*last;
@@ -61,5 +63,7 @@ void	rb(t_all *meta)
 	last->next = one;
 	one->prev = last;
 	reindex_b(meta);
+	if (x)
+		ft_putstr("rb\n");
 }
 

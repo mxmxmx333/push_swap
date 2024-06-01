@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 12:10:19 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/01 13:19:40 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/01 16:26:51 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <stdlib.h> /*size_t, malloc, free*/
 #include <limits.h> //limits
+#include <unistd.h> //write
 
 typedef struct s_stack
 {
@@ -55,21 +56,23 @@ void	reindex_b(t_all *meta);
 
 /*basic utils*/
 int		ft_atoi(const char *nptr);
+void	ft_putstr(char *s);
+int		ft_strlen(char *s);
 
 /*ops*/
 //rotations
-void	ra(t_all *meta);
-void	rb(t_all *meta);
+void	ra(t_all *meta, int x);
+void	rb(t_all *meta, int x);
 void	rr(t_all *meta);
 void	rrr(t_all *meta);
-void	rra(t_all *meta);
-void	rrb(t_all *meta);
+void	rra(t_all *meta, int x);
+void	rrb(t_all *meta, int x);
 //pushes
 void	pa(t_all *meta);
 void	pb(t_all *meta);
 //swaps
-void	sa(t_all *meta);
-void	sb(t_all *meta);
+void	sa(t_all *meta, int x);
+void	sb(t_all *meta, int x);
 void	ss(t_all *meta);
 
 /*targeting*/
@@ -82,6 +85,14 @@ void	getcosts_a(t_all *meta);
 /*input control*/
 
 /*sorting*/
+void	push_swap(t_all *meta);
+void	push_to_b(t_all *meta);
+
+/*sorting helpers*/
+void	a_pos_pos(t_all *meta, t_stack *to_push, t_stack *target);
+void	a_neg_neg(t_all *meta, t_stack *to_push, t_stack *target);
+void	a_pos_neg(t_all *meta, t_stack *to_push, t_stack *target);
+void	a_neg_pos(t_all *meta, t_stack *to_push, t_stack *target);
 
 /*main functions*/
 

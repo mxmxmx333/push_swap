@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 20:27:59 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/05/30 17:13:09 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/01 16:05:59 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void	pa(t_all *meta)
 	reindex_a(meta);
 	meta->ssb--;
 	meta->ssa++;
+	ft_putstr("pa\n");
 }
 //push from a to b
 void	pb(t_all *meta)
@@ -110,4 +111,5 @@ void	pb(t_all *meta)
 	reindex_b(meta);
 	meta->ssa--;
 	meta->ssb++;
+	ft_putstr("pb\n");
 }

@@ -5,30 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/22 16:04:37 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/01 14:26:50 by mbonengl         ###   ########.fr       */
+/*   Created: 2024/06/01 15:50:52 by mbonengl          #+#    #+#             */
+/*   Updated: 2024/06/01 16:56:08 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*get_to_push_a(t_all *meta)
+void	sort_three(t_all *meta)
 {
-	t_stack	*current;
-	t_stack	*to_push;
-	
+	t_stack	*stack_a;
+	int		num1;
+	int		num2;
+	int		num3;
+
+	stack_a = meta->stack_a->next;
+	num1 = stack_a->number;
+	num2 = stack_a->next->number;
+	num3 = stack_a->next->next->number;
+	if (num1 < num2 && num2 > num3 && num3 > num1)
+	{
+		sa(meta, 1);
+	}
+	else if (num1 > num2 && num2 < num3 && num3 > num1)
+	{
+		sa(meta, 1);
+	}
 }
 
-void	push_to_b(t_all *meta)
+void	push_swap(t_all *meta)
 {
-	t_stack	*to_push;
-	t_stack	*target;
-	
-	while (meta->ssa > 4 && meta->ssb < 4)
-		pb(meta);
-	while (meta->ssa > 4)
-	{
-		getcosts_a(meta);
-		to_push = get_to_push_a(meta);
-	}
+	push_to_b(meta);
+	sort_three(meta);
 }

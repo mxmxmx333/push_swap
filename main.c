@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:21:00 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/01 13:22:24 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/01 16:56:19 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,65 +70,12 @@ int	main(int argc, char **argv)
 		create_stack_b(meta);
 		if (is_filled_a(meta))
 		{
-			
 			test_stack(meta);
-			printf("------ stack a filled ------\n");
-			// pb(meta);
-			// printf("------ pb ------\n");
-			// rra(meta);
-			// test_stack(meta);
-			// printf("------ rr a ------\n");
-			// rra(meta);
-			// test_stack(meta);
-			// printf("------ rr a ------\n");
-			// rra(meta);
-			// test_stack(meta);
-			// printf("------ rr a ------\n");
+			push_swap(meta);
+			test_stack(meta);
+			// printf("------ push to b------\n");
 
-			ra(meta);
-			test_stack(meta);
-			printf("------ stack a rotated ------\n");
-			
-			rra(meta);
-			test_stack(meta);
-			printf("------ stack a r. rotated ------\n");
 
-			pa(meta);
-			test_stack(meta);
-			printf("------ pushed from empty stack ------\n");
-
-			pb(meta);
-			pb(meta);
-			pb(meta);
-			pb(meta);
-			pb(meta);
-			test_stack(meta);
-			printf("------ pushed pb thrice ------\n");
-
-			rr(meta);
-			test_stack(meta);
-			printf("------ rotated both stacks ------\n");
-
-			rrr(meta);
-			test_stack(meta);
-			printf("------ r. rotated both stacks ------\n");
-	
-			ss(meta);
-			test_stack(meta);
-			printf("------ ss ------\n");
-
-				
-			ss(meta);
-			test_stack(meta);
-			printf("------ ss ------\n");
-			
-			get_all_targets_a(meta);
-			test_stack(meta);
-			printf("------ targeting a ------\n");
-			
-			getcosts_a(meta);
-			test_stack(meta);
-			printf("------ calculating costs------\n");
 			free_meta(meta);
 		}
 	}

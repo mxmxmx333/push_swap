@@ -6,13 +6,13 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 17:32:53 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/05/30 18:56:20 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/01 16:05:10 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_all *meta)
+void	sa(t_all *meta, int x)
 {
 	int		temp;
 	t_stack	*one;
@@ -27,9 +27,11 @@ void	sa(t_all *meta)
 	temp = one->number;
 	one->number = two->number;
 	two->number = temp;
+	if (x)
+		ft_putstr("sa\n");
 }
 
-void	sb(t_all *meta)
+void	sb(t_all *meta, int x)
 {
 	int		temp;
 	t_stack	*one;
@@ -44,10 +46,13 @@ void	sb(t_all *meta)
 	temp = one->number;
 	one->number = two->number;
 	two->number = temp;
+	if (x)
+		ft_putstr("sb\n");
 }
 
 void	ss(t_all *meta)
 {
-	sa(meta);
-	sb(meta);
+	sa(meta, 0);
+	sb(meta, 0);
+	ft_putstr("ss\n");
 }

@@ -1,16 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   gen_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 19:19:30 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/05/24 13:12:58 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/01 15:29:24 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	ft_strlen(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+void	ft_putstr(char *s)
+{
+	write(1, s, ft_strlen(s));
+}
 
 static int	checkoverflow(long res, int num, int sign)
 {
