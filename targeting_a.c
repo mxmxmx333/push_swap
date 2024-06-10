@@ -6,35 +6,11 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 15:15:39 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/01 11:23:49 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/10 12:24:17 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// int	is_pot_minmax_b(int number, t_all *meta)
-// {
-// 	size_t	counter;
-// 	t_stack	*stack_b;
-
-// 	counter = 1;
-// 	stack_b = meta->stack_b->next;
-// 	while (counter++ < meta->ssb)
-// 	{
-// 		if (stack_b->number > number)
-// 			return (0);
-// 		stack_b = stack_b->next; 
-// 	}
-// 	counter = 1;
-// 	stack_b = meta->stack_b->next;
-// 	while (counter++ < meta->ssb)
-// 	{
-// 		if (stack_b->number < number)
-// 			return (0);
-// 		stack_b = stack_b->next; 
-// 	}
-// 	return (1);
-// }
 
 t_stack	*get_max_b(t_all *meta)
 {

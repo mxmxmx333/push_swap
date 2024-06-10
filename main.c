@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:21:00 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/01 16:56:19 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/10 19:18:27 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,37 @@ int	main(int argc, char **argv)
 		create_stack_b(meta);
 		if (is_filled_a(meta))
 		{
-			test_stack(meta);
+			// test_stack(meta);
 			push_swap(meta);
+			get_all_targets_b(meta);
 			test_stack(meta);
-			// printf("------ push to b------\n");
-
-
+			// pb(meta);
+			// test_stack(meta);
+			// pb(meta);
+			// test_stack(meta);
+			// pb(meta);
+			// test_stack(meta);
+			// ra(meta, 1);
+			// test_stack(meta);
+			// rb(meta, 1);
+			// test_stack(meta);
+			// rr(meta);
+			// test_stack(meta);
+			// rra(meta, 1);
+			// test_stack(meta);
+			// rrb(meta, 1);
+			// test_stack(meta);
+			// rrr(meta);
+			// test_stack(meta);
+			// sa(meta, 1);
+			// test_stack(meta);
+			// sb(meta, 1);
+			// test_stack(meta);
+			// ss(meta);
+			// test_stack(meta);
+			// pa(meta);
+			// test_stack(meta);
+			// // printf("------ push to b------\n");
 			free_meta(meta);
 		}
 	}

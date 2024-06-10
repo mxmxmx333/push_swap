@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 12:10:19 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/01 16:26:51 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/10 19:19:14 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void	ss(t_all *meta);
 
 /*targeting*/
 void	get_all_targets_a(t_all *meta);
+void	get_all_targets_b(t_all *meta);
 
 /*costs*/
 void	put_direction(t_stack *node, int a, int b);
@@ -93,6 +94,7 @@ void	a_pos_pos(t_all *meta, t_stack *to_push, t_stack *target);
 void	a_neg_neg(t_all *meta, t_stack *to_push, t_stack *target);
 void	a_pos_neg(t_all *meta, t_stack *to_push, t_stack *target);
 void	a_neg_pos(t_all *meta, t_stack *to_push, t_stack *target);
+t_stack	*get_min_a(t_all *meta);
 
 /*main functions*/
 
