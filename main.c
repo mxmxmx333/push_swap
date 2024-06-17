@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:21:00 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/10 19:18:27 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/17 18:13:07 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ int	main(int argc, char **argv)
 		return (free(meta),1);
 	meta->stack_a = NULL;
 	meta->stack_b = NULL;
+	meta->input = NULL;
+	meta->raw = NULL;
 	meta->ssa = 0;
 	meta->ssb = 0;
 	if (argc < 2)
@@ -72,8 +74,8 @@ int	main(int argc, char **argv)
 		{
 			// test_stack(meta);
 			push_swap(meta);
-			get_all_targets_b(meta);
-			test_stack(meta);
+			//get_all_targets_b(meta);
+			//test_stack(meta);
 			// pb(meta);
 			// test_stack(meta);
 			// pb(meta);

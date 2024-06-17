@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   costs.c                                            :+:      :+:    :+:   */
+/*   costs_a.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 11:24:07 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/01 13:40:14 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/11 17:01:55 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	calc_r_r_a(t_stack *node)
 	cost_a = node->pos -1;
 	cost_b = node->target->pos -1;
 	if (cost_b > cost_a)
-		cost_a = cost_b;	
+		cost_a = cost_b;
 	return (cost_a + 1);
 }
 
@@ -44,7 +44,7 @@ size_t	calc_rr_rr_a(t_stack *node, t_all *meta)
 	cost_a = meta->ssa - node->pos;
 	cost_b = meta->ssb - node->target->pos;
 	if (cost_b > cost_a)
-		cost_a = cost_b;	
+		cost_a = cost_b;
 	return (cost_a + 1);
 }
 

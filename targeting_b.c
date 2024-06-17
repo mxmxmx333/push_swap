@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 15:15:39 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/10 19:19:00 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/11 17:45:04 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ t_stack	*get_min_a(t_all *meta)
 	}
 	return (min);
 }
+
 t_stack	*get_closest_a(int number, t_all *meta)
 {
 	size_t	counter;
@@ -41,7 +42,7 @@ t_stack	*get_closest_a(int number, t_all *meta)
 	{
 		if (number < stack_a->number && !closest)
 			closest = stack_a;
-		else if (number < stack_a->number && stack_a->number < closest->number)
+		else if (number < stack_a->number && stack_a->number > closest->number)
 			closest = stack_a;
 		stack_a = stack_a->next;
 	}

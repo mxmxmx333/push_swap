@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 15:50:52 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/10 19:19:41 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/11 17:17:59 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ void	push_swap(t_all *meta)
 {
 	push_to_b(meta);
 	sort_three(meta);
-	// push_to_a(meta);
+	push_to_a(meta);
 }

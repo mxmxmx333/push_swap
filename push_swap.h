@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 12:10:19 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/10 19:19:14 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/17 19:22:55 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <stdlib.h> /*size_t, malloc, free*/
 #include <limits.h> //limits
 #include <unistd.h> //write
+#include <stddef.h> //NULL, size_t, SIZE_MAX
 
 typedef struct s_stack
 {
@@ -29,19 +30,23 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }	t_stack;
 
-typedef struct s_ops
+typedef struct s_clean_input
 {
-	char			*str;
-	struct s_ops	*next;
-}	t_ops;
+	char 					*raw;
+	char					*clean;
+	int						number;
+	char					*compare;
+	struct s_clean_input	*next;
+}	t_clean_input;
 
 typedef struct s_all
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	size_t	ssa;
-	size_t	ssb;
-	t_ops	*ops;
+	t_stack			*stack_a;
+	t_stack			*stack_b;
+	t_clean_input	*input;
+	char			**split;
+	size_t			ssa;
+	size_t			ssb;
 }	t_all;
 
 /*input & filling*/
@@ -88,6 +93,7 @@ void	getcosts_a(t_all *meta);
 /*sorting*/
 void	push_swap(t_all *meta);
 void	push_to_b(t_all *meta);
+void	push_to_a(t_all *meta);
 
 /*sorting helpers*/
 void	a_pos_pos(t_all *meta, t_stack *to_push, t_stack *target);

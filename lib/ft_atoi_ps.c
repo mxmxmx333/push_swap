@@ -1,30 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   basic_utils.c                                      :+:      :+:    :+:   */
+/*   ft_atoi_ps.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 19:19:30 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/17 18:26:35 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/17 18:07:48 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	ft_strlen(char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-void	ft_putstr(char *s)
-{
-	write(1, s, ft_strlen(s));
-}
 
 static int	checkoverflow(long res, int num, int sign)
 {
@@ -68,11 +54,10 @@ int	ft_atoi(const char *nptr)
 	return ((int)res * sign);
 }
 
-/*
+
 //this function should crash for NULL input
 int main (void)
 {
 	printf("atoi: %d\n", atoi("\t\v\f\r\n -21474836481234341"));
 	printf("ft_atoi: %d\n", ft_atoi("\t\v\f\r\n -21474836481234341"));
 }
-*/
