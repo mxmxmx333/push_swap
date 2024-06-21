@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 16:37:31 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/21 17:48:14 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/21 18:52:42 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,9 @@ void	checkdupes(t_all *meta)
 	}
 }
 
-void convertback(t_all *meta)
+void	convertback(t_all *meta)
 {
 	t_clean_input	*current;
-	int				i;
 
 	current = meta->input;
 	while (current)

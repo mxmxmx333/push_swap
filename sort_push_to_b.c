@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:04:37 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/19 11:55:01 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/21 18:56:11 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_stack	*get_to_push_a(t_all *meta)
 void	execute_push_a(t_stack *to_push, t_all *meta)
 {
 	t_stack	*target;
-	
+
 	target = to_push->target;
 	if (to_push->dir_a == 1 && to_push->dir_b == 1)
 		a_pos_pos(meta, to_push, target);
@@ -46,8 +46,7 @@ void	execute_push_a(t_stack *to_push, t_all *meta)
 void	push_to_b(t_all *meta)
 {
 	t_stack	*to_push;
-	t_stack	*target;
-	
+
 	while (meta->ssa > 4 && meta->ssb < 3)
 		pb(meta);
 	while (meta->ssa > 4)

@@ -6,11 +6,12 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 14:29:16 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/19 11:52:02 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/21 18:36:56 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 void	reindex_b(t_all *meta)
 {
 	t_stack	*stack_b;
@@ -20,7 +21,7 @@ void	reindex_b(t_all *meta)
 	stack_b = meta->stack_b;
 	if (!stack_b->next)
 		return ;
-	while(stack_b->pos != 0)
+	while (stack_b->pos != 0)
 		stack_b = stack_b->next;
 	stack_b = stack_b->next;
 	while (stack_b->pos != 0)
@@ -28,8 +29,9 @@ void	reindex_b(t_all *meta)
 		stack_b->pos = pos;
 		pos++;
 		stack_b = stack_b->next;
-	}			
+	}
 }
+
 void	reindex_a(t_all *meta)
 {
 	t_stack	*stack_a;
@@ -39,7 +41,7 @@ void	reindex_a(t_all *meta)
 	stack_a = meta->stack_a;
 	if (!stack_a->next)
 		return ;
-	while(stack_a->pos != 0)
+	while (stack_a->pos != 0)
 		stack_a = stack_a->next;
 	stack_a = stack_a->next;
 	while (stack_a->pos != 0)
@@ -47,7 +49,7 @@ void	reindex_a(t_all *meta)
 		stack_a->pos = pos;
 		pos++;
 		stack_a = stack_a->next;
-	}			
+	}
 }
 
 void	put_direction(t_stack *node, int a, int b)

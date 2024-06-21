@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 16:00:43 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/21 17:48:13 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/21 18:03:06 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	is_zero_iteration(char *input)
 int	cleansize(char *input)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -49,10 +49,10 @@ int	cleansize(char *input)
 
 char	*cleanoneinput(char *input)
 {
-	int	i;
-	int j;
-	char *clean;
-	
+	int		i;
+	int		j;
+	char	*clean;
+
 	if (is_zero_iteration(input))
 		return (ft_strdup("0"));
 	j = cleansize(input);

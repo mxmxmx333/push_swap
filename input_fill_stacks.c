@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 14:49:38 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/21 17:47:23 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/21 18:54:18 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	is_filled_a(t_all *meta)
 {
 	return (meta->stack_a && meta->stack_a->next);
 }
+
 t_stack	*create_node(int number, size_t pos, t_all *meta)
 {
 	t_stack	*new_node;
@@ -33,21 +34,61 @@ t_stack	*create_node(int number, size_t pos, t_all *meta)
 	new_node->prev = NULL;
 	return (new_node);
 }
+
 void	create_stack_b(t_all *meta)
 {
 	t_stack	*stack_b;
-	
+
 	stack_b = create_node(0, 0, meta);
 	meta->stack_b = stack_b;
 	if (!stack_b)
-		return(free_meta(meta), error());
+		return (free_meta(meta), error());
 	meta->ssb++;
 }
+
+void	create_stack_a(t_all *meta)
+{
+	t_stack	*stack_a;
+
+	stack_a = create_node(0, 0, meta);
+	meta->stack_a = stack_a;
+	if (!stack_a)
+		return (free_meta(meta), error());
+	meta->ssa++;
+}
+
+void	fill_stack_a(t_all *meta)
+{
+	size_t			pos;
+	t_stack			*temp;
+	t_stack			*new_node;
+	t_clean_input	*input;
+
+	create_stack_a(meta);
+	input = meta->input;
+	pos = 1;
+	temp = meta->stack_a;
+	while (input)
+	{
+		new_node = create_node(input->number, pos, meta);
+		if (!new_node)
+			return (free_meta(meta), error());
+		meta->ssa++;
+		temp->next = new_node;
+		new_node->prev = temp;
+		temp = temp->next;
+		pos++;
+		input = input->next;
+	}
+	temp->next = meta->stack_a;
+	meta->stack_a->prev = temp;
+}
+/*
 void	fill_stack_a(size_t argc, char **argv, t_all *meta)
 {
 	size_t			pos;
 	t_stack			*stack_a;
-	t_stack 		*temp;
+	t_stack			*temp;
 	t_stack			*new_node;
 	t_clean_input	*input;
 
@@ -63,7 +104,7 @@ void	fill_stack_a(size_t argc, char **argv, t_all *meta)
 	{
 		new_node = create_node(input->number, pos, meta);
 		if (!new_node)
-			return  (free_meta(meta), error());
+			return (free_meta(meta), error());
 		meta->ssa++;
 		temp->next = new_node;
 		new_node->prev = temp;
@@ -73,5 +114,4 @@ void	fill_stack_a(size_t argc, char **argv, t_all *meta)
 	}
 	temp->next = stack_a;
 	stack_a->prev = temp;
-}
-
+}*/

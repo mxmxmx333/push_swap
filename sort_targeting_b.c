@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 15:15:39 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/19 11:51:29 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/21 18:37:52 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@ t_stack	*get_min_a(t_all *meta)
 	size_t	counter;
 	t_stack	*stack_a;
 	t_stack	*min;
+
 	counter = 1;
 	stack_a = meta->stack_a->next;
 	min = stack_a;
 	while (counter++ < meta->ssa)
 	{
-		if(stack_a->number < min->number)
+		if (stack_a->number < min->number)
 			min = stack_a;
 		stack_a = stack_a->next;
 	}
@@ -64,8 +65,6 @@ void	get_all_targets_b(t_all *meta)
 	t_stack	*current;
 	size_t	counter;
 
-	// if (meta->ssb < 3 || meta->ssa < 2)
-	// 	return ;
 	counter = 1;
 	current = meta->stack_b->next;
 	while (counter++ < meta->ssb)

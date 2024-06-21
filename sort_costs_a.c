@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 11:24:07 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/19 11:55:44 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/21 18:55:44 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ size_t	calc_r_rr_a(t_stack *node, t_all *meta)
 {
 	size_t	cost_a;
 	size_t	cost_b;
-	size_t	temp;
 
 	cost_a = node->pos -1;
 	cost_b = meta->ssb - node->target->pos;
@@ -39,7 +38,6 @@ size_t	calc_rr_rr_a(t_stack *node, t_all *meta)
 {
 	size_t	cost_a;
 	size_t	cost_b;
-	size_t	temp;
 
 	cost_a = meta->ssa - node->pos;
 	cost_b = meta->ssb - node->target->pos;
@@ -52,7 +50,6 @@ size_t	calc_rr_r_a(t_stack *node, t_all *meta)
 {
 	size_t	cost_a;
 	size_t	cost_b;
-	size_t	temp;
 
 	cost_a = meta->ssa - node->pos;
 	cost_b = node->target->pos - 1;

@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 19:19:30 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/19 11:57:55 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/21 18:02:09 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	ft_strlen(char *s)
 		i++;
 	return (i);
 }
+
 void	ft_putstr(char *s)
 {
 	write(1, s, ft_strlen(s));

@@ -6,13 +6,11 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 16:24:49 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/21 17:27:50 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/21 18:27:29 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-
 
 void	ft_free(void **ptr)
 {
@@ -22,16 +20,16 @@ void	ft_free(void **ptr)
 		*ptr = NULL;
 	}
 }
+
 void	free_split(t_all *meta)
 {
-	int	i;
+	int		i;
+	char	**split;
 
 	i = 0;
-	char **split;
-	
 	split = meta->split;
 	if (!split)
-		return;
+		return ;
 	while (split[i])
 	{
 		ft_free((void **)&split[i]);
@@ -40,13 +38,13 @@ void	free_split(t_all *meta)
 	ft_free((void **)&split);
 }
 
-void clearstack(t_stack *stack)
+void	clearstack(t_stack *stack)
 {
-	t_stack *current;
-	t_stack *temp;
+	t_stack	*current;
+	t_stack	*temp;
 
 	if (!stack)
-		return;
+		return ;
 	if (!stack->next)
 		return (ft_free((void **)&stack));
 	current = stack->next;
@@ -60,10 +58,10 @@ void clearstack(t_stack *stack)
 	stack = NULL;
 }
 
-void free_meta(t_all *meta)
+void	free_meta(t_all *meta)
 {
 	if (!meta)
-		return;
+		return ;
 	if (meta->stack_a)
 		clearstack(meta->stack_a);
 	meta->stack_a = NULL;
@@ -77,10 +75,10 @@ void free_meta(t_all *meta)
 	meta = NULL;
 }
 
-void clearinput(t_all *meta)
+void	clearinput(t_all *meta)
 {
-	t_clean_input *current;
-	t_clean_input *temp;
+	t_clean_input	*current;
+	t_clean_input	*temp;
 
 	current = meta->input;
 	while (current)

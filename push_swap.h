@@ -6,18 +6,18 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 12:10:19 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/21 17:44:44 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/21 18:54:08 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <stdlib.h> /*size_t, malloc, free*/
-#include <limits.h> //limits
-#include <unistd.h> //write
-#include <stddef.h> //NULL, size_t
-#include <stdint.h> //SIZE_MAX
+# include <stdlib.h> /*size_t, malloc, free*/
+# include <limits.h> //limits
+# include <unistd.h> //write
+# include <stddef.h> //NULL, size_t
+# include <stdint.h> //SIZE_MAX
 
 typedef struct s_stack
 {
@@ -33,7 +33,7 @@ typedef struct s_stack
 
 typedef struct s_clean_input
 {
-	char 					*raw;
+	char					*raw;
 	char					*clean;
 	int						number;
 	char					*compare;
@@ -51,7 +51,7 @@ typedef struct s_all
 }	t_all;
 
 /*input & filling*/
-void	fill_stack_a(size_t argc, char **argv, t_all *meta);
+void	fill_stack_a(t_all *meta);
 int		is_filled_a(t_all *meta);
 void	create_stack_b(t_all *meta);
 
@@ -59,7 +59,7 @@ void	create_stack_b(t_all *meta);
 void	free_meta(t_all *meta);
 void	reindex_a(t_all *meta);
 void	reindex_b(t_all *meta);
-void 	clearinput(t_all *meta);
+void	clearinput(t_all *meta);
 
 /*basic utils*/
 char	*ft_itoa(int n);
@@ -104,7 +104,7 @@ void	checkdupes(t_all *meta);
 void	cleaninput(t_all *meta);
 int		checkinputs(int argc, char **argv, t_all *meta);
 int		checkformat(char *input);
-void 	convertback(t_all *meta);
+void	convertback(t_all *meta);
 void	convertnumbers(t_all *meta);
 
 /*sorting*/

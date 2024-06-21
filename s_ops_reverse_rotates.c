@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 19:47:58 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/19 11:56:33 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/21 18:55:17 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,10 @@ void	rra(t_all *meta, int x)
 	t_stack	*one;
 	t_stack	*last;
 	t_stack	*zero;
-	int		temp;
+
 	if (meta->ssa < 2)
 		return ;
 	zero = meta->stack_a;
-	// while (zero->pos != 0)
-	// 	zero = zero->next;
 	one = zero->next;
 	last = zero->prev;
 	zero->prev->prev->next = zero;
@@ -42,12 +40,12 @@ void	rra(t_all *meta, int x)
 	if (x)
 		ft_putstr("rra\n");
 }
+
 void	rrb(t_all *meta, int x)
 {
 	t_stack	*one;
 	t_stack	*last;
 	t_stack	*zero;
-	int		temp;
 
 	if (meta->ssb < 2)
 		return ;

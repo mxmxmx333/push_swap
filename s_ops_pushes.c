@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 20:27:59 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/19 11:56:35 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/21 18:30:43 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 // unattaching from stack a
 void	connect(t_stack *first, t_stack *second)
 {
-	first->next = second, 
+	first->next = second;
 	second->prev = first;
 }
 
@@ -36,6 +36,7 @@ void	unattach_a(t_stack *topush, t_all *meta)
 	}
 	reindex_a(meta);
 }
+
 // unattaching from stack b
 void	unattach_b(t_stack *topush, t_all *meta)
 {
@@ -55,12 +56,13 @@ void	unattach_b(t_stack *topush, t_all *meta)
 	}
 	reindex_b(meta);
 }
+
 //takes from b to a
 void	pa(t_all *meta)
 {
 	t_stack	*zero;
 	t_stack	*to_push;
-	t_stack *one;
+	t_stack	*one;
 
 	to_push = meta->stack_b;
 	if (to_push->next == NULL)
@@ -84,12 +86,13 @@ void	pa(t_all *meta)
 	meta->ssa++;
 	ft_putstr("pa\n");
 }
+
 //push from a to b
 void	pb(t_all *meta)
 {
 	t_stack	*zero;
 	t_stack	*to_push;
-	t_stack *one;
+	t_stack	*one;
 
 	to_push = meta->stack_a;
 	if (to_push->next == NULL)

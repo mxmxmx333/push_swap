@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 15:15:39 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/19 11:51:44 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/21 18:37:25 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,19 @@ t_stack	*get_max_b(t_all *meta)
 	size_t	counter;
 	t_stack	*stack_b;
 	t_stack	*max;
+
 	counter = 1;
 	stack_b = meta->stack_b->next;
 	max = stack_b;
 	while (counter++ < meta->ssb)
 	{
-		if(stack_b->number > max->number)
+		if (stack_b->number > max->number)
 			max = stack_b;
 		stack_b = stack_b->next;
 	}
 	return (max);
 }
+
 t_stack	*get_closest_b(int number, t_all *meta)
 {
 	size_t	counter;

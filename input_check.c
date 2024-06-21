@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 18:04:06 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/21 17:46:37 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/21 18:02:24 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	appendstring(char *input, t_all *meta)
 	else
 		add_to_end(meta, new);
 }
+
 void	appendinput(char *input, t_all *meta)
 {
 	char	**split;
