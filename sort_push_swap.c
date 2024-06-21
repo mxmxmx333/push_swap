@@ -1,17 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sort_push_swap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 15:50:52 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/11 17:17:59 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/21 17:01:07 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	sort_two(t_all *meta)
+{
+	t_stack	*stack_a;
+	int		num1;
+	int		num2;
+
+	stack_a = meta->stack_a->next;
+	num1 = stack_a->number;
+	num2 = stack_a->next->number;
+	if (num1 > num2)
+		sa(meta, 1);
+}
 
 void	sort_three(t_all *meta)
 {
@@ -44,7 +56,11 @@ void	sort_three(t_all *meta)
 
 void	push_swap(t_all *meta)
 {
+	if (meta->ssa == 3)
+		return (sort_two(meta));
 	push_to_b(meta);
 	sort_three(meta);
+	if (meta->ssb < 2)
+		return ;
 	push_to_a(meta);
 }

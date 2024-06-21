@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 18:20:00 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/17 18:32:28 by mbonengl         ###   ########.fr       */
+/*   Created: 2024/04/06 20:05:51 by mbonengl          #+#    #+#             */
+/*   Updated: 2024/06/18 19:59:55 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	t_list	*current;
+	unsigned char	*pointer;
 
-	if (!*lst)
-	{
-		*lst = new;
-		return ;
-	}
-	current = *lst;
-	while (current->next)
-		current = current->next;
-	current->next = new;
+	if (size && nmemb > SIZE_MAX / size)
+		return (0);
+	pointer = (void *)malloc(nmemb * size);
+	if (!pointer)
+		return (NULL);
+	ft_bzero((void *)pointer, size * nmemb);
+	return (pointer);
 }

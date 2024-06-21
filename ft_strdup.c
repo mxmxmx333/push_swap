@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/14 18:06:42 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/04/21 15:17:39 by mbonengl         ###   ########.fr       */
+/*   Created: 2024/04/07 21:41:07 by mbonengl          #+#    #+#             */
+/*   Updated: 2024/06/18 20:07:40 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+char	*ft_strdup(const char *s)
 {
-	t_list	*temp;
+	int		strlen;
+	int		i;
+	char	*duplicate;
 
-	if (!lst || !del)
-		return ;
-	while (*lst)
+	strlen = ft_strlen((char *)s);
+	duplicate = (char *)ft_calloc(strlen + 1, sizeof(char));
+	if (!duplicate)
+		return (NULL);
+	i = 0;
+	while (*s)
 	{
-		temp = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = temp;
+		duplicate[i] = *s;
+		s++;
+		i++;
 	}
-	lst = 0;
+	duplicate[i] = 0;
+	return (duplicate);
 }
+/* cannot be protected, is supposed to crash*/

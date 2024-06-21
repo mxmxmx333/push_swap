@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checkinput.c                                       :+:      :+:    :+:   */
+/*   input_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 18:04:06 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/17 19:25:31 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/21 17:46:37 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ t_clean_input	*create_list(t_all *meta)
 
 	new = (t_clean_input *)malloc(sizeof(t_clean_input));
 	if (!new)
-		return (free_meta(meta), exit(1), NULL);
+		return (free_meta(meta), error(), NULL);
+	new->raw = NULL;
+	new->clean = NULL;
+	new->compare = NULL;
 	new->next = NULL;
 	return (new);
 }
@@ -39,10 +42,10 @@ void	appendstring(char *input, t_all *meta)
 
 	new = create_list(meta);
 	if (!new)
-		return (free_meta(meta), exit(1));
+		return (free_meta(meta), error());
 	new->raw = ft_strdup(input);
 	if (!new->raw)
-		return (free_meta(meta), exit(1));
+		return (free(new), free_meta(meta), error());
 	if (!meta->input)
 		meta->input = new;
 	else
@@ -56,14 +59,14 @@ void	appendinput(char *input, t_all *meta)
 	i = -1;
 	split = ft_split(input, ' ');
 	if (!split)
-		return (free_meta(meta), exit(1));
+		return (free_meta(meta), error());
 	meta->split = split;
 	while (split[++i])
 		appendstring(split[i], meta);
 	i = -1;
 	while (split[++i])
-		free(split[i]);
-	free(split);
+		ft_free((void **)&split[i]);
+	ft_free((void **)&split);
 	meta->split = NULL;
 }
 
@@ -71,19 +74,18 @@ int	checkinputs(int argc, char **argv, t_all *meta)
 {
 	int		i;
 
-	i = -1;
+	i = 0;
 	while (++i < argc)
 	{
 		if (!checkformat(argv[i]))
-			return (0);
+			return (free_meta(meta), error(), 0);
 	}
-	i = -1;
+	i = 0;
 	while (++i < argc)
 		appendinput(argv[i], meta);
-	cleaninputs(meta);
+	cleaninput(meta);
 	convertnumbers(meta);
+	checkdupes(meta);
 	convertback(meta);
-	if (!compare_input(meta))
-		return (0);
 	return (1);
 }

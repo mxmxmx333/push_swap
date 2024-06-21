@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 12:10:19 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/17 19:22:55 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/21 17:44:44 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 #include <stdlib.h> /*size_t, malloc, free*/
 #include <limits.h> //limits
 #include <unistd.h> //write
-#include <stddef.h> //NULL, size_t, SIZE_MAX
+#include <stddef.h> //NULL, size_t
+#include <stdint.h> //SIZE_MAX
 
 typedef struct s_stack
 {
@@ -58,11 +59,21 @@ void	create_stack_b(t_all *meta);
 void	free_meta(t_all *meta);
 void	reindex_a(t_all *meta);
 void	reindex_b(t_all *meta);
+void 	clearinput(t_all *meta);
 
 /*basic utils*/
-int		ft_atoi(const char *nptr);
+char	*ft_itoa(int n);
+int		ft_atoi(const char *nptr, int *nbr);
 void	ft_putstr(char *s);
 int		ft_strlen(char *s);
+char	*ft_strdup(const char *s);
+char	**ft_split(char const *s, char c);
+void	ft_bzero(void *s, size_t n);
+void	*ft_calloc(size_t nmemb, size_t size);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+void	ft_free(void **ptr);
+void	error(void);
 
 /*ops*/
 //rotations
@@ -89,6 +100,12 @@ void	put_direction(t_stack *node, int a, int b);
 void	getcosts_a(t_all *meta);
 
 /*input control*/
+void	checkdupes(t_all *meta);
+void	cleaninput(t_all *meta);
+int		checkinputs(int argc, char **argv, t_all *meta);
+int		checkformat(char *input);
+void 	convertback(t_all *meta);
+void	convertnumbers(t_all *meta);
 
 /*sorting*/
 void	push_swap(t_all *meta);

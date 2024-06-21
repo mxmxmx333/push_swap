@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotates.c                                          :+:      :+:    :+:   */
+/*   s_ops_reverse_rotates.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/22 12:19:50 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/10 11:52:56 by mbonengl         ###   ########.fr       */
+/*   Created: 2024/05/29 19:47:58 by mbonengl          #+#    #+#             */
+/*   Updated: 2024/06/19 11:56:33 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rr(t_all *meta)
+void	rrr(t_all *meta)
 {
-	ra(meta, 0);
-	rb(meta, 0);
-	ft_putstr("rr\n");
+	rra(meta, 0);
+	rrb(meta, 0);
+	ft_putstr("rrr\n");
 }
 
-void	ra(t_all *meta, int x)
+void	rra(t_all *meta, int x)
 {
 	t_stack	*one;
 	t_stack	*last;
 	t_stack	*zero;
 	int		temp;
-
 	if (meta->ssa < 2)
 		return ;
 	zero = meta->stack_a;
@@ -33,17 +32,17 @@ void	ra(t_all *meta, int x)
 	// 	zero = zero->next;
 	one = zero->next;
 	last = zero->prev;
-	zero->next = zero->next->next;
-	zero->next->prev = zero;
-	zero->prev = one;
-	one->next = zero;
+	zero->prev->prev->next = zero;
+	zero->prev = zero->prev->prev;
+	zero->next = last;
+	last->prev = zero;
 	last->next = one;
 	one->prev = last;
 	reindex_a(meta);
 	if (x)
-		ft_putstr("ra\n");
+		ft_putstr("rra\n");
 }
-void	rb(t_all *meta, int x)
+void	rrb(t_all *meta, int x)
 {
 	t_stack	*one;
 	t_stack	*last;
@@ -57,14 +56,13 @@ void	rb(t_all *meta, int x)
 		zero = zero->next;
 	one = zero->next;
 	last = zero->prev;
-	zero->next = zero->next->next;
-	zero->next->prev = zero;
-	zero->prev = one;
-	one->next = zero;
+	zero->prev->prev->next = zero;
+	zero->prev = zero->prev->prev;
+	zero->next = last;
+	last->prev = zero;
 	last->next = one;
 	one->prev = last;
 	reindex_b(meta);
 	if (x)
-		ft_putstr("rb\n");
+		ft_putstr("rrb\n");
 }
-

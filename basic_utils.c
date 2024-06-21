@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 19:19:30 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/17 18:26:35 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/19 11:57:55 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int	checkoverflow(long res, int num, int sign)
 	return (1);
 }
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr, int *nbr)
 {
 	int		sign;
 	long	res;
@@ -61,11 +61,12 @@ int	ft_atoi(const char *nptr)
 	{
 		of = checkoverflow(res, *nptr - '0', sign);
 		if (of != 1)
-			return (of);
+			return (0);
 		res = res * 10 + *nptr - 48;
 		nptr++;
 	}
-	return ((int)res * sign);
+	*nbr = (int)res * sign;
+	return (1);
 }
 
 /*

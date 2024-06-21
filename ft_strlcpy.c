@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/06 20:05:51 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/17 18:26:16 by mbonengl         ###   ########.fr       */
+/*   Created: 2024/04/04 14:17:35 by mbonengl          #+#    #+#             */
+/*   Updated: 2024/06/18 20:08:45 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	unsigned char	*pointer;
+	size_t	srclen;
+	size_t	index;
 
-	if (size && nmemb > SIZE_MAX / size)
-		return (0);
-	pointer = (void *)malloc(nmemb * size);
-	if (!pointer)
-		return (NULL);
-	ft_bzero((void *)pointer, size * nmemb);
-	return (pointer);
+	index = 0;
+	srclen = 0;
+	while (src[srclen] != '\0')
+		srclen++;
+	while (index + 1 < size && src[index] != '\0')
+	{
+		dst[index] = src[index];
+		index++;
+	}
+	if (size != 0)
+		dst[index] = '\0';
+	return (srclen);
 }
