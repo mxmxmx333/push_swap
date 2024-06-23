@@ -6,7 +6,7 @@
 #    By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/25 17:14:05 by mbonengl          #+#    #+#              #
-#    Updated: 2024/06/21 19:06:44 by mbonengl         ###   ########.fr        #
+#    Updated: 2024/06/22 14:07:34 by mbonengl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ SRCS 	:= main.c memory_free_meta.c \
 		sort_stacks_utils.c \
 		basic_utils.c ft_bzero.c ft_calloc.c ft_itoa.c ft_split.c \
 		ft_strdup.c ft_strlcpy.c ft_substr.c
-		
+
 OBJS	:=	$(SRCS:.c=.o)
 
 norm:= norminette -R CheckForbiddenSourceHeader
@@ -44,16 +44,16 @@ $(NAME): $(OBJS)
 norm: $(SRCS)
 	$(norm) $(SRCS) push_swap.h
 	
-.c.o:		
+.c.o:
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS) a.out
-	
+
 fclean:	clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY:	all clean fclean re .c.o norm
+.PHONY:	all clean fclean re norm
 # ɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅɅ #

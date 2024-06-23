@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 12:10:19 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/21 18:54:08 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/23 18:01:04 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ typedef struct s_all
 void	fill_stack_a(t_all *meta);
 int		is_filled_a(t_all *meta);
 void	create_stack_b(t_all *meta);
+int		sortingneeded(t_all *meta);
 
 /*meta_utils*/
 void	free_meta(t_all *meta);

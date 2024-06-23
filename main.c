@@ -6,7 +6,7 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:21:00 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/21 18:57:53 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/23 18:04:24 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,13 @@ int	main(int argc, char **argv)
 		return (free(meta), 1);
 	set_meta_null(meta);
 	if (argc < 2)
-	{
-		write(2, "Error\n", 6);
 		return (free(meta), 1);
-	}
 	else
 	{
 		if (!checkinputs(argc, argv, meta))
 			return (free_meta(meta), exit(1), 1);
+		if (!sortingneeded(meta))
+			return (free_meta(meta), 0);
 		fill_stack_a(meta);
 		create_stack_b(meta);
 		if (is_filled_a(meta))

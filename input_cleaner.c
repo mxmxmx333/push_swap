@@ -6,11 +6,29 @@
 /*   By: mbonengl <mbonengl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 16:00:43 by mbonengl          #+#    #+#             */
-/*   Updated: 2024/06/21 18:03:06 by mbonengl         ###   ########.fr       */
+/*   Updated: 2024/06/23 18:02:00 by mbonengl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	sortingneeded(t_all *meta)
+{
+	t_clean_input	*temp;
+	int				x;
+
+	temp = meta->input;
+	while (temp)
+	{
+		x = temp->number;
+		if (!temp->next)
+			return (0);
+		temp = temp->next;
+		if (temp->number < x)
+			return (1);
+	}
+	return (0);
+}
 
 int	is_zero_iteration(char *input)
 {
